@@ -16,8 +16,6 @@
 ******************************************************************/
 package com.droidlogic.mediacenter.dlna;
 
-import com.droidlogic.mediacenter.airplay.util.Utils;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.Preference;
@@ -82,6 +80,9 @@ public class PrefUtils {
         }
         public String getString ( String key, String defVal ) {
             return mPrefs.getString ( key, defVal );
+        }
+        public static SharedPreferences getSharedPreferences ( Context context ) {
+            return PreferenceManager.getDefaultSharedPreferences ( context );
         }
         public static Object getProperties(String key, String def) {
             String defVal = def;

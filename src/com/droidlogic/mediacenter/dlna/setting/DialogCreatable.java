@@ -14,15 +14,17 @@
 *See the License for the specific language governing permissions and
 *limitations under the License.
 ******************************************************************/
-package com.droidlogic.mediacenter.airplay.setting;
 
-import android.widget.Button;
+package com.droidlogic.mediacenter.dlna.setting;
+
+import android.app.Dialog;
 
 /**
- * Interface letting {@link SettingsPreferenceFragment} access to bottom bar inside
- * {@link android.preference.PreferenceActivity}.
+ * Letting the class, assumed to be Fragment, create a Dialog on it. Should be useful
+ * you want to utilize some capability in {@link SettingsPreferenceFragment} but don't want
+ * the class inherit the class itself (See {@link ProxySelector} for example).
  */
-public interface ButtonBarHandler {
-    public boolean hasNextButton();
-    public Button getNextButton();
+public interface DialogCreatable {
+
+    public Dialog onCreateDialog ( int dialogId );
 }

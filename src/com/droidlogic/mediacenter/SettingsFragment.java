@@ -27,9 +27,8 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 
-import com.droidlogic.mediacenter.airplay.setting.NameSetDialog;
-import com.droidlogic.mediacenter.airplay.setting.SettingsPreferenceFragment;
-import com.droidlogic.mediacenter.airplay.util.Utils;
+import com.droidlogic.mediacenter.dlna.setting.NameSetDialog;
+import com.droidlogic.mediacenter.dlna.setting.SettingsPreferenceFragment;
 import com.droidlogic.mediacenter.dlna.MediaCenterService;
 import com.droidlogic.mediacenter.dlna.PrefUtils;
 
@@ -81,7 +80,7 @@ public class SettingsFragment extends SettingsPreferenceFragment implements
         @Override
         public void onResume() {
             super.onResume();
-            SharedPreferences prefs = Utils.getSharedPreferences ( getActivity() );
+            SharedPreferences prefs = PrefUtils.getSharedPreferences ( getActivity() );
             mDeviceName = prefs.getString ( KEY_DEVICE_NAME, getActivity().getString ( R.string.config_default_name ) );
             mDeviceNamePref.setSummary ( mDeviceName );
         }
@@ -114,7 +113,7 @@ public class SettingsFragment extends SettingsPreferenceFragment implements
         private void onDeviceNameChanged ( String name ) {
             if ( name != null && !mDeviceName.equals ( name ) ) {
                 mDeviceName = name;
-                SharedPreferences prefs = Utils.getSharedPreferences ( getActivity() );
+                SharedPreferences prefs = PrefUtils.getSharedPreferences ( getActivity() );
                 prefs.edit().putString ( KEY_DEVICE_NAME, mDeviceName )
                 .commit();
                 mDeviceNamePref

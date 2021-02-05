@@ -18,19 +18,19 @@ package com.droidlogic.mediacenter.dlna;
 
 import java.io.File;
 import java.io.IOException;
-
+import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
 
 public class FileUtil {
     private static final String TAG = "FileUtil";
 
-    public static File getCacheFile(String imageUri) {
+    public static File getCacheFile(String imageUri,Context cxt) {
         File cacheFile = null;
-        File nandDir = Environment.getExternalStorageDirectory();
+        String nandDirStr = cxt.getFilesDir().getAbsolutePath();//Environment.getExternalStorageDirectory();
         String fileName = getFileName(imageUri);
         // Log.d(TAG,"File Name path:"+imageUri+" FileName:"+fileName);
-        File dir = new File(nandDir.getAbsoluteFile(), AsynImageLoader.CACHE_DIR);
+        File dir = new File(nandDirStr, AsynImageLoader.CACHE_DIR);
         if (!dir.exists()) {
             dir.mkdirs();
         }
@@ -40,10 +40,10 @@ public class FileUtil {
         return cacheFile;
     }
 
-    public static void delCacheFile() {
+    public static void delCacheFile(Context cxt) {
         File cacheFile = null;
-        File nandDir = Environment.getExternalStorageDirectory();
-        File dir = new File(nandDir.getAbsoluteFile(), AsynImageLoader.CACHE_DIR);
+        String nandDirStr = cxt.getFilesDir().getAbsolutePath();//Environment.getExternalStorageDirectory();
+        File dir = new File(nandDirStr, AsynImageLoader.CACHE_DIR);
         if (dir.exists()) {
             deleteAllDir(dir);
         }

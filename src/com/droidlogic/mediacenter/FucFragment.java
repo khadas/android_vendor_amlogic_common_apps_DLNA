@@ -21,7 +21,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.droidlogic.mediacenter.R;
-import com.droidlogic.mediacenter.airplay.setting.SettingsPreferences;
 import com.droidlogic.mediacenter.dlna.DmpFragment;
 import com.droidlogic.mediacenter.dlna.DmpStartFragment;
 import com.droidlogic.mediacenter.dlna.PrefUtils;
@@ -124,15 +123,7 @@ public class FucFragment extends ListFragment {
             }
         }
 
-        private void showAirplay ( Fragment fragment ) {
-            if ( ( fragment == null ) || ! ( fragment instanceof SettingsPreferences ) ) {
-                fragment = new SettingsPreferences();
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ft.replace ( R.id.frag_detail, fragment );
-                ft.setTransition ( FragmentTransaction.TRANSIT_FRAGMENT_FADE );
-                ft.commit();
-            }
-        }
+
         private void showAboutFragment ( Fragment fragment ) {
             if ( ( fragment == null ) || ! ( fragment instanceof SettingsFragment ) ) {
                 fragment = new SettingsFragment();
@@ -164,11 +155,6 @@ public class FucFragment extends ListFragment {
             map.put ( LIST_IMG, R.drawable.dmr );
             map.put ( LIST_SUMMARY, getString ( R.string.dmr_summary ) );
             list.add ( map );
-            //map = new HashMap<String, Object>();
-            //map.put ( LIST_TITLE, getString ( R.string.airplay_title ) );
-            //map.put ( LIST_IMG, R.drawable.airplay );
-            //map.put ( LIST_SUMMARY, getString ( R.string.airplay_summary ) );
-            //list.add ( map );
             map = new HashMap<String, Object>();
             map.put ( LIST_TITLE, getString ( R.string.about ) );
             map.put ( LIST_IMG, R.drawable.settings );

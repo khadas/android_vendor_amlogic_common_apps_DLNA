@@ -14,7 +14,7 @@
 *See the License for the specific language governing permissions and
 *limitations under the License.
 ******************************************************************/
-package com.droidlogic.mediacenter.airplay.setting;
+package com.droidlogic.mediacenter.dlna.setting;
 
 import android.app.AlertDialog;
 import android.content.Context;

@@ -152,7 +152,7 @@ public class DmpService extends Service {
         public void onDestroy() {
             super.onDestroy();
             mHandler.sendEmptyMessage ( STOP_DMP );
-            FileUtil.delCacheFile();
+            FileUtil.delCacheFile(this);
         }
         class DmpHandler extends Handler {
                 public DmpHandler() {

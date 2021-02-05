@@ -84,7 +84,6 @@
     <string name="change_mode">Music Play Mode</string>
     <string name="str_menu">Press Menu for func</string>
     <string name="str_time_null" translatable="false">00:00:00</string>
-    <string name="toggle_setting_airplay">"Setting Airplay"</string>
     <string name="toggle_setting_dmp">"Setting DMP"</string>
     <string name="refresh">Refresh</string>
     <string name="str_init">initializing...</string>
@@ -100,28 +99,25 @@
     <string name="video_next_summary">Ready for Next...</string>
     <string name="video_next_exit">Exit</string>
 
-    <string name="airplay_title" translatable="false">AirPlayer</string>
-    <string name="airplay_summary">support for ios network display</string>
     <string name="settings_summary">network player settings</string>
     <string name="setting_version_summary" translatable="false">v201510232109</string>
-    
-    <string name="toggle_airplay">AIRPLAY</string>
+
     <string name="toggle_setting">SETTINGS</string>
-    
+
     <string name="popup_menu_my_android">My Android</string>
-    
-    
+
+
     <string name="setting_service_title">Start AirPlay</string>
-    <string name="setting_boot_title">Automatically Start</string> 
-    <string name="setting_boot_summary">Automatically start when boot up</string> 
+    <string name="setting_boot_title">Automatically Start</string>
+    <string name="setting_boot_summary">Automatically start when boot up</string>
     <string name="setting_device_title">Target Name</string>
     <string name="setting_version_title">Version</string>
     <string name="lock_settings_picker_title">Choose screen lock</string>
     <string name="help_label">Help</string>
     <string name="dialog_btn_cancel">Cancel</string>
     <string name="dialog_btn_ok">OK</string>
-    
-    
+
+
     <string name="loading_video">Loading video\u2026</string>
     <string name="resume_playing_title">Resume video</string>
     <string name="resume_playing_message">Resume playing from %s ?</string>
@@ -129,7 +125,7 @@
     <string name="resume_playing_restart">Start over</string>
     <string name="details_ms"  translatable="false">%1$02d:%2$02d</string>
     <string name="details_hms"  translatable="false">%1$d:%2$02d:%3$02d</string>
-     
+
     <string name="audio_play">Playing music</string>
     <string name="audio_stop">Play stopped</string>
     <string name="network_disconnected">Network disconnected</string>

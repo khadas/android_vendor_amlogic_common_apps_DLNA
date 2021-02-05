@@ -16,9 +16,6 @@
 ******************************************************************/
 package com.droidlogic.mediacenter;
 
-
-import com.droidlogic.mediacenter.airplay.setting.SettingsPreferences;
-import com.droidlogic.mediacenter.airplay.util.Utils;
 import com.droidlogic.mediacenter.dlna.DmpService;
 import com.droidlogic.mediacenter.dlna.DmpStartFragment;
 import com.droidlogic.mediacenter.dlna.MediaCenterService;

@@ -29,7 +29,7 @@ import com.droidlogic.mediacenter.dlna.MediaCenterService;
 import com.droidlogic.mediacenter.dlna.PrefUtils;
 import com.droidlogic.mediacenter.dlna.DmpFragment.FreshListener;
 import com.droidlogic.mediacenter.dlna.DmpService.DmpBinder;
-import com.droidlogic.mediacenter.airplay.setting.SettingsPreferences;
+
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.NetworkInfo.State;
@@ -71,11 +71,9 @@ public class MediaCenterActivity extends Activity  implements FreshListener {
             animation = ( AnimationSet ) AnimationUtils.loadAnimation ( this, R.anim.refresh_btn );
             mDeviceName = ( TextView ) findViewById ( R.id.device_name );
             mContent = this;
-            if (mPrefUtils.getBooleanVal ( SettingsPreferences.KEY_BOOT_CFG, false )) {
-                Log.e(TAG,"Start Service on create");
-                checkNet();
-            }
+            checkNet();
             LogStart();
+            PermissionUtils.verifyStoragePermissions(this);
         }
 
         private void startDmpService() {
@@ -123,7 +121,6 @@ public class MediaCenterActivity extends Activity  implements FreshListener {
         protected void onResume() {
             super.onResume();
             checkNet();
-            registerHomeKeyReceiver(mContent);
             /*mRefreshView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -134,7 +131,6 @@ public class MediaCenterActivity extends Activity  implements FreshListener {
         }
         @Override
         protected void onPause() {
-            unregisterHomeKeyReceiver(mContent);
             super.onPause();
         }
 
@@ -229,18 +225,6 @@ public class MediaCenterActivity extends Activity  implements FreshListener {
             return super.onKeyDown ( keyCode, event );
         }
 
-        private void registerHomeKeyReceiver(Context context) {
-            Log.i(TAG, "registerHomeKeyReceiver");
-            final IntentFilter homeFilter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
-            context.registerReceiver(mHomeKeyReceiver, homeFilter);
-        }
-
-        private void unregisterHomeKeyReceiver(Context context) {
-            Log.i(TAG, "unregisterHomeKeyReceiver");
-            if (null != mHomeKeyReceiver) {
-                context.unregisterReceiver(mHomeKeyReceiver);
-            }
-        }
         private void checkNet() {
             ConnectivityManager mConnectivityManager = ( ConnectivityManager ) mContent.getSystemService ( Context.CONNECTIVITY_SERVICE );
             NetworkInfo wifiInfo = mConnectivityManager.getNetworkInfo ( ConnectivityManager.TYPE_WIFI );

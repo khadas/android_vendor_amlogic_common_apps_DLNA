@@ -24,7 +24,6 @@ package com.droidlogic.mediacenter.dlna;
  * @Author
  * @Version V1.0
  */
-import com.droidlogic.mediacenter.airplay.util.ApiHelper;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -654,17 +653,6 @@ public class UPNPVideoView extends SurfaceView implements VideoController.MediaP
                 toggleMediaControlsVisiblity();
             }
             return false;
-        }
-        private void showSystemUi ( boolean visible ) {
-            if ( !ApiHelper.HAS_VIEW_SYSTEM_UI_FLAG_LAYOUT_STABLE )
-            { return; }
-            int flag = View.SYSTEM_UI_FLAG_VISIBLE;
-            if ( !visible ) {
-                // We used the deprecated "STATUS_BAR_HIDDEN" for unbundling
-                flag |= View.STATUS_BAR_HIDDEN
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
-            }
-            this.setSystemUiVisibility ( flag );
         }
 
 

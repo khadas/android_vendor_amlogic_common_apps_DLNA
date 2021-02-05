@@ -34,5 +34,5 @@
       android:layout_marginTop="5dp"
       android:textAppearance="?android:attr/textAppearanceListItem"
   />
- 
+
 </RelativeLayout>

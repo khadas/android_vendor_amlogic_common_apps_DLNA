@@ -63,7 +63,6 @@ public class UPNPAdapter extends BaseAdapter implements Filterable {
         private ViewBinder mViewBinder;
 
         private List <? extends Map < String, ? >> mData;
-
         private int mResource;
         private int mDropDownResource;
         private LayoutInflater mInflater;
@@ -88,7 +87,7 @@ public class UPNPAdapter extends BaseAdapter implements Filterable {
          */
         public UPNPAdapter ( Context context, List <? extends Map < String, ? >> data,
                              int resource, String[] from, int[] to ) {
-            asynImageLoader = new AsynImageLoader();
+            asynImageLoader = new AsynImageLoader(context);
             mData = data;
             mResource = mDropDownResource = resource;
             mFrom = from;

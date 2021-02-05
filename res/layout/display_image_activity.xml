@@ -50,28 +50,28 @@
             />
         <ImageButton
             android:id="@+id/bt_play_pause"
-            android:layout_height="wrap_content" 
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:src="@drawable/play_play"
             />
         <ImageButton
             android:id="@+id/bt_right"
-            android:layout_height="wrap_content" 
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:src="@drawable/next_play"
             />
         <ImageButton
             android:id="@+id/bt_roomin"
-            android:layout_height="wrap_content" 
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:src="@drawable/zoom_in"
             />
         <ImageButton
             android:id="@+id/bt_roomout"
-            android:layout_height="wrap_content" 
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:src="@drawable/zoom_out"

@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.lang.ref.SoftReference;
-
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Message;
@@ -37,7 +37,7 @@ public class AsynImageLoader {
     private HashMap<String,Task> taskQueue;
     private ArrayList<String> taskQueueName;
     private boolean isRunning = false;
-
+    private Context mContext;
     private ImageCallback getImageCallback(final ImageView imageView, final int resId) {
 
         return new ImageCallback() {
@@ -61,7 +61,7 @@ public class AsynImageLoader {
                 while ( taskQueueName != null && taskQueueName.size() > 0) {
                     String key = taskQueueName.remove(0);
                     Task task = taskQueue.remove(key);
-                    task.bitmap = PicUtil.getbitmapAndwrite(task.path);
+                    task.bitmap = PicUtil.getbitmapAndwrite(task.path,mContext);
                     caches.put(task.path, new SoftReference<Bitmap>(task.bitmap));
                     if (handler != null) {
                         Message msg = handler.obtainMessage();
@@ -89,8 +89,9 @@ public class AsynImageLoader {
 
     };
 
-    public AsynImageLoader() {
+    public AsynImageLoader(Context cxt) {
         // init
+        mContext = cxt;
         caches = new HashMap<String, SoftReference<Bitmap>>();
         taskQueue = new HashMap<String,AsynImageLoader.Task>();
         taskQueueName = new ArrayList<String>();

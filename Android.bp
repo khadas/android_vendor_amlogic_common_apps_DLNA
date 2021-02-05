@@ -1,0 +1,20 @@
+android_app {
+    name: "DLNA",
+
+    static_libs: ["libdlna","androidx.appcompat_appcompat"],
+    srcs: ["src/**/*.java"],
+    proprietary: true,
+    certificate: "platform",
+    optimize: {
+        enabled: false,
+    },
+    dex_preopt: {
+        enabled: false,
+    },
+    sdk_version: "current",
+}
+
+java_import {
+    name: "libdlna",
+    jars: ["libs/dlna.jar"],
+}

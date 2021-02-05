@@ -81,18 +81,16 @@
     <string name="set_name_title">"我的网络播放器"</string>
     <string name="loading">"加载中"</string>
     <string name="exitstr">"即将退出...."</string>
-    <string name="toggle_airplay">"airplay网络接收播放器"</string>
     <string name="toggle_setting">"设置"</string>
-    <string name="toggle_setting_airplay">"设置Airplay"</string>
     <string name="toggle_setting_dmp">"设置DMP"</string>
     <string name="disply_err">"没有发现网络服务设备"</string>
     <string name="error_title">"出错了!"</string>
     <string name="popup_menu_my_android">"我的设备"</string>
     <string name="video_next_exit">"退出"</string>
     <string name="dlg_ok">"好的"</string>
-    <string name="dlg_cancel">"取消"</string>    
+    <string name="dlg_cancel">"取消"</string>
     <string name="setting_service_title">"启动 AirPlay 服务"</string>
-    <string name="setting_boot_title">"自动启动 AirPlay 服务"</string> 
+    <string name="setting_boot_title">"自动启动 AirPlay 服务"</string>
     <string name="setting_boot_summary">开机自动启动服务</string>
     <string name="setting_apk_summary">"进入apk启动服务"</string>
     <string name="setting_device_title">设备名称</string>
@@ -102,7 +100,6 @@
     <string name="dialog_btn_cancel">取消</string>
     <string name="dialog_btn_ok">确定</string>
 
-    <string name="airplay_summary">"IOS 网络播放器"</string>
     <string name="settings_summary">"网络播放器设置"</string>
     <string name="loading_video">"正在载入视频..."</string>
     <string name="resume_playing_title">继续播放视频</string>

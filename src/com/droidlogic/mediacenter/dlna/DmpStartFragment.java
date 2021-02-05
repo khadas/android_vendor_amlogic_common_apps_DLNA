@@ -25,7 +25,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.SwitchPreference;
 import org.cybergarage.util.Debug;
-import com.droidlogic.mediacenter.airplay.setting.SettingsPreferenceFragment;
+import com.droidlogic.mediacenter.dlna.setting.SettingsPreferenceFragment;
 import com.droidlogic.mediacenter.R;
 
 /**

@@ -15,7 +15,7 @@
 *limitations under the License.
 ******************************************************************/
 
-package com.droidlogic.mediacenter.airplay.setting;
+package com.droidlogic.mediacenter.dlna.setting;
 import com.droidlogic.mediacenter.R;
 //import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -80,16 +80,7 @@ public class SettingsPreferenceFragment extends PreferenceFragment implements Di
         protected int getHelpResource() {
             return 0;
         }
-
-        @Override
-        public void onCreateOptionsMenu ( Menu menu, MenuInflater inflater ) {
-            if ( mHelpUrl != null && getActivity() != null ) {
-                MenuItem helpItem = menu.add ( 0, MENU_HELP, 0, R.string.help_label );
-                HelpUtils.prepareHelpMenuItem ( getActivity(), helpItem, mHelpUrl );
-            }
-        }
-
-        /*
+       /*
          * The name is intentionally made different from Activity#finish(), so that
          * users won't misunderstand its meaning.
          */

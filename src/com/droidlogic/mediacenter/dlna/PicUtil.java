@@ -117,7 +117,7 @@ public class PicUtil {
         }
         return bitmap;
     }
-    public static Bitmap getbitmapAndwrite(String imageUri){
+    public static Bitmap getbitmapAndwrite(String imageUri,Context cxt){
         Bitmap bitmap = null;
         try {
             URL myFileUrl = new URL(imageUri);
@@ -126,7 +126,7 @@ public class PicUtil {
             conn.setDoInput(true);
             conn.connect();
             InputStream is = conn.getInputStream();
-            File cacheFile  = FileUtil.getCacheFile(imageUri);
+            File cacheFile  = FileUtil.getCacheFile(imageUri,cxt);
             BufferedOutputStream bos = null;
             bos = new BufferedOutputStream(new FileOutputStream(cacheFile));
             Log.i(TAG, "write file to " + cacheFile.getCanonicalPath());

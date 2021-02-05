@@ -16,7 +16,6 @@
 ******************************************************************/
 package com.droidlogic.mediacenter.dlna;
 
-import com.droidlogic.mediacenter.airplay.util.ApiHelper;
 
 import android.app.ProgressDialog;
 import android.app.Activity;
