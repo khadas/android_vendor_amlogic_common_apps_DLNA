@@ -19,7 +19,8 @@ package com.droidlogic.mediacenter;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-
+import com.droidlogic.mediacenter.dlna.PrefUtils;
+import com.droidlogic.mediacenter.dlna.DmpStartFragment;
 /**
  * @ClassName DMRBroadcastReceiver
  * @Description TODO
@@ -29,13 +30,20 @@ import android.content.Intent;
  * @Version V1.0
  */
 public class DMRBroadcastReceiver extends BroadcastReceiver {
-
+        private PrefUtils mPrefUtils;
         /* (non-Javadoc)
          * @see android.content.BroadcastReceiver#onReceive(android.content.Context, android.content.Intent)
          */
         @Override
         public void onReceive ( Context cxt, Intent intent ) {
-            cxt.startService(new Intent(cxt,WeakRefService.class));
+            mPrefUtils = new PrefUtils(cxt);
+            boolean bootstart = mPrefUtils.getBooleanVal(DmpStartFragment.KEY_BOOT_CFG,false);
+            boolean apkstart = mPrefUtils.getBooleanVal(DmpStartFragment.KEY_START_SERVICE,false);
+            if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED) && bootstart) {
+                cxt.startService(new Intent(cxt,WeakRefService.class));
+            } else if (bootstart || apkstart) {
+                cxt.startService(new Intent(cxt,WeakRefService.class));
+            }
         }
 
 }
