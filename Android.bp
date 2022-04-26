@@ -16,5 +16,5 @@ android_app {
 
 java_import {
     name: "libdlna",
-    jars: ["libs/dlna.jar"],
+    jars: ["libs/dlnalib.jar"],
 }
