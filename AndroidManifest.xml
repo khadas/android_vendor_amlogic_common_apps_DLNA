@@ -60,6 +60,7 @@
         <activity
             android:name="com.droidlogic.mediacenter.MediaCenterActivity"
             android:label="@string/app_name"
+            android:exported="true"
             android:windowSoftInputMode="stateAlwaysHidden"
             android:screenOrientation="landscape"
             android:theme="@style/RootActivity" >
@@ -94,11 +95,13 @@
             android:screenOrientation="landscape"
             android:theme="@style/dmr_dialog" />
         <service android:name="com.droidlogic.mediacenter.dlna.MediaCenterService" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.mediacenter.servicename"></action>
             </intent-filter>
         </service>
         <service android:name="com.droidlogic.mediacenter.dlna.DmpService" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.mediacenter.networkerr" />
             </intent-filter>
@@ -107,6 +110,7 @@
         </service>
         <service android:name="com.droidlogic.mediacenter.WeakRefService" />
         <receiver android:name="com.droidlogic.mediacenter.DMRBroadcastReceiver" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -133,6 +137,7 @@
         </activity>
 
         <receiver android:name="com.intowow.sdk.ScheduleReceiver" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.intowow.sdk.prefetch" />
             </intent-filter>
