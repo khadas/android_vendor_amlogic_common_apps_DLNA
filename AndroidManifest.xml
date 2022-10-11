@@ -94,13 +94,13 @@
             android:launchMode="singleInstance"
             android:screenOrientation="landscape"
             android:theme="@style/dmr_dialog" />
-        <service android:name="com.droidlogic.mediacenter.dlna.MediaCenterService" >
+        <service android:name="com.droidlogic.mediacenter.dlna.MediaCenterService"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.android.mediacenter.servicename"></action>
             </intent-filter>
         </service>
-        <service android:name="com.droidlogic.mediacenter.dlna.DmpService" >
+        <service android:name="com.droidlogic.mediacenter.dlna.DmpService"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.android.mediacenter.networkerr" />
@@ -109,7 +109,7 @@
         <service android:name="com.hpplay.happyplay.SdkServiceForRestart" >
         </service>
         <service android:name="com.droidlogic.mediacenter.WeakRefService" />
-        <receiver android:name="com.droidlogic.mediacenter.DMRBroadcastReceiver" >
+        <receiver android:name="com.droidlogic.mediacenter.DMRBroadcastReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -136,7 +136,7 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
 
-        <receiver android:name="com.intowow.sdk.ScheduleReceiver" >
+        <receiver android:name="com.intowow.sdk.ScheduleReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.intowow.sdk.prefetch" />
